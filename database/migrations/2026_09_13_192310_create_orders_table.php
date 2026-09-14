@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('customer_id');
+            $table->foreignId('customer_id')->constrained()->restrictOnDelete();
             $table->decimal('subtotal', 12, 2);
             $table->decimal('tax_total', 12, 2);
             $table->decimal('grand_total', 12, 2);
